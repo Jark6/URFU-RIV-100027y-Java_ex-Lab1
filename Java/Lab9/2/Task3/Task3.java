@@ -11,49 +11,62 @@ import java.util.Scanner;
 public class Task3 {
     public static void main(String[] args) {
         ESetArray();
-SumArray(StatArray);
+        SumArray(StatArray);
     }
-    private static byte StatArray[];
+    private static byte[] StatArray;
 
     private static void ESetArray(){
         try{SetArray();}
         catch (InputMismatchException e){
-            System.out.println("значение за пределами диапазона byte ("+e+")");
+            System.out.println("введите корректное значение ("+e+")");
             ESetArray();
         }
         catch (Exception e){
-            System.out.println("иное ("+e+")");
+            System.out.println("ошибка ("+e+")");
             ESetArray();
         }
 
     }
-    private static void EInput(int i){
-        try {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("введите byte элемент массива "+"["+(i+1)+"]");
-        StatArray[i]=scan.nextByte();}
-        catch(InputMismatchException e){
-            System.out.println("значение за пределами диапазона byte ("+e+")");
-            EInput(i);}
+    static class ByteRangeException extends InputMismatchException{
+        ByteRangeException(){
+            super("число за пределами диапазона byte");
+        }
     }
-    private static byte[] SetArray() {
+    private static void EInput(int i) {
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.print("введите byte элемент массива "+"["+(i+1)+"]");
+            int temp=0;
+            try{
+            temp=scan.nextInt();
+            if(temp<-128||temp>127){
+            throw new ByteRangeException();}
+        }catch(ByteRangeException e){
+                System.out.println("значение за пределами диапазона byte ("+e+")");
+                EInput(i);}
+            StatArray[i] = (byte)temp;
+        }
+            catch(InputMismatchException e){
+            System.out.println("введите число ("+e+")");
+            EInput(i);}
+
+
+    }
+    private static void SetArray() {
         Scanner scan = new Scanner(System.in);
         System.out.print("введите размер массива");
         int a = scan.nextInt();
-        byte[] Array = new byte[a];
-        StatArray = Array;
+        StatArray = new byte[a];
         for(int i=0;i<a;i++){
-                           EInput(i);
-                            }
-        Array = StatArray;
-        return Array;
+            EInput(i);
+        }
     }
 
     private static void SumArray(byte [] InputArray){
         int A=0;
         //boolean flag = false;
         for (int j : InputArray) {
-                A += j;
+            A += (int) j;
         }
         System.out.println("сумма элементов массива = ["+(A)+"]");
     }
