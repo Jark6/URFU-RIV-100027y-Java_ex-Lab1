@@ -1,0 +1,266 @@
+<?xml version = "1"?>
+<root>
+    <date>13.02.2021</date>
+    <type>order</type>
+    <author>Kozlov</author>
+    <Students>
+        <Student>
+            <id>01</id>
+            <name>Tyrion Lannister</name>
+            <nickname>Imp</nickname>
+            <father>Tywin Lannister</father>
+            <mother>Joanna Lannister</mother>
+            <House>Lannister</House>
+            <episodes>67</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>02</id>
+            <name>Eddard Stark</name>
+            <nickname>Ned</nickname>
+            <father>Rickard Stark</father>
+            <mother>Lyarra Stark</mother>
+            <House>Stark</House>
+            <episodes>16</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>03</id>
+            <name>Cersei Lannister</name>
+            <nickname>Queen of the Seven Kingdoms of Westeros</nickname>
+            <father>Tywin Lannister</father>
+            <mother>Joanna Lannister</mother>
+            <House>Lannister</House>
+            <House>Baratheon</House>
+            <episodes>62</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>04</id>
+            <name>Daenerys Targaryen</name>
+            <nickname>the Stormborn</nickname>
+            <father>Aerys II Targaryen</father>
+            <mother>Rhaella Targaryen</mother>
+            <House>Targaryen</House>
+            <episodes>62</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>05</id>
+            <name>Jaime Lannister</name>
+            <nickname>Kingslayer</nickname>
+            <father>Tywin Lannister</father>
+            <mother>Joanna Lannister</mother>
+            <House>Lannister</House>
+            <episodes>55</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>06</id>
+            <name>Aegon Targaryen</name>
+            <nickname>Jon Snow</nickname>
+            <father>Rhaegar Targaryen</father>
+            <mother>Lyanna Stark</mother>
+            <House>Targaryen</House>
+            <House>Stark</House>
+            <House>Night Watch</House>
+            <episodes>62</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>07</id>
+            <name>Catelyn Stark</name>
+            <nickname>Lady of Winterfell</nickname>
+            <father>Hoster Tully</father>
+            <mother>Minisa Whent</mother>
+            <House>Tully</House>
+            <House>Stark</House>
+            <episodes>25</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>08</id>
+            <name>Sansa Stark</name>
+            <nickname>Queen in the North</nickname>
+            <father>Eddard Stark</father>
+            <mother>Catelyn Starkt</mother>
+            <House>Stark</House>
+            <episodes>59</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>09</id>
+            <name>Arya Stark</name>
+            <nickname>none</nickname>
+            <father>Eddard Stark</father>
+            <mother>Catelyn Stark</mother>
+            <House>Stark</House>
+            <episodes>59</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>10</id>
+            <name>Brandon Stark</name>
+            <nickname>Bran</nickname>
+            <father>Eddard Stark</father>
+            <mother>Catelyn Stark</mother>
+            <House>Stark</House>
+            <episodes>40</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>11</id>
+            <name>Rickon Stark</name>
+            <nickname>none</nickname>
+            <father>Eddard Stark</father>
+            <mother>Catelyn Stark</mother>
+            <House>Stark</House>
+            <episodes>14</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>12</id>
+            <name>Robb Stark</name>
+            <nickname>young wolf</nickname>
+            <father>Eddard Stark</father>
+            <mother>Catelyn Stark</mother>
+            <House>Stark</House>
+            <episodes>21</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>13</id>
+            <name>Jorah Mormont</name>
+            <nickname>Andal</nickname>
+            <father>Jeor Mormont</father>
+            <mother>?</mother>
+            <House>Targaryen</House>
+            <episodes>52</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>14</id>
+            <name>Theon Greyjoy</name>
+            <nickname>Reek</nickname>
+            <father>Balon IX Greyjoy</father>
+            <mother>Alannys Harlaw</mother>
+            <House>Greyjoy</House>
+            <episodes>47</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>15</id>
+            <name>Samwell Tarly</name>
+            <nickname>Sam</nickname>
+            <father>Randyll Tarly</father>
+            <mother>?</mother>
+            <House>Tarly</House>
+            <House>Night Watch</House>
+            <episodes>47</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>16</id>
+            <name>Asha Greyjoy</name>
+            <nickname>Yara</nickname>
+            <father>Balon IX Greyjoy</father>
+            <mother>Alannys Harlaw</mother>
+            <House>Greyjoy</House>
+            <episodes>16</episodes>
+            <status>alive</status>
+        </Student>
+        <Student>
+            <id>17</id>
+            <name>Sandor Clegane</name>
+            <nickname>Hound</nickname>
+            <father>?</father>
+            <mother>?</mother>
+            <House>Lannister</House>
+            <episodes>38</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>18</id>
+            <name>Joffrey Baratheon</name>
+            <nickname>none</nickname>
+            <father>Jaime Lannister</father>
+            <mother>Cersei Lannister</mother>
+            <House>Lannister</House>
+            <House>Baratheon</House>
+            <episodes>26</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>19</id>
+            <name>Margaery Tyrell</name>
+            <nickname>none</nickname>
+            <father>Mace Tyrell</father>
+            <mother>Alerie Hightower</mother>
+            <House>Tyrell</House>
+            <episodes>26</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>20</id>
+            <name>Stannis Baratheon</name>
+            <nickname>none</nickname>
+            <father>Steffon Baratheon</father>
+            <mother>Cassana Estermont</mother>
+            <House>Baratheon</House>
+            <episodes>24</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>21</id>
+            <name>Robert Baratheon</name>
+            <nickname>King of the Seven Kingdoms</nickname>
+            <father>Mace Tyrell</father>
+            <mother>Cassana Estermont</mother>
+            <House>Baratheon</House>
+            <episodes>7</episodes>
+            <status>dead</status>
+        </Student>
+        <Student>
+            <id>22</id>
+            <name>Viserys Targaryen</name>
+            <nickname>none</nickname>
+            <father>Aerys II Targaryen</father>
+            <mother>Rhaella Targaryen</mother>
+            <House>Targaryen</House>
+            <episodes>5</episodes>
+            <status>dead</status>
+        </Student>
+    </Students>
+    <Subjects>
+        <Subject>
+            <id>01</id>
+            <name>Math</name>
+            <hours>60</hours>
+        </Subject>
+        <Subject>
+            <id>02</id>
+            <name>Physics</name>
+            <hours>30</hours>
+        </Subject>
+        <Subject>
+            <id>03</id>
+            <name>Programming</name>
+            <hours>80</hours>
+        </Subject>
+        <Subject>
+            <id>04</id>
+            <name>Algorithms and Data Structures</name>
+            <hours>60</hours>
+        </Subject>
+        <Subject>
+            <id>05</id>
+            <name>Basics of Project Activities</name>
+            <hours>30</hours>
+        </Subject>
+        <Subject>
+            <id>06</id>
+            <name>Foreign Language</name>
+            <hours>40</hours>
+        </Subject>
+    </Subjects>
+</root>
