@@ -26,7 +26,7 @@ public class Parser2 {
                 .cookie("auth", "token")
                 .timeout(3000)
                 .data("Login Name:", "COMPACT")
-                .data("Password:", "QWErty123")
+                .data("Password:", "*********")
                 //.data("operating AC (57 selections)")
                // .data("Expected date format dMy.","21May21")
                // .dara("<span id=\"button-1026-btnInnerEl\" data-ref=\"btnInnerEl\" unselectable=\"on\" class=\"x-btn-inner x-btn-inner-default-toolbar-small\">&nbsp;</span>")
