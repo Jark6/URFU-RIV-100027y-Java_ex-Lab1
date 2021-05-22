@@ -3,7 +3,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class T1197 {
+public class T2100 {
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in, "ISO-8859-1");
         PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out, "ISO-8859-1"));
