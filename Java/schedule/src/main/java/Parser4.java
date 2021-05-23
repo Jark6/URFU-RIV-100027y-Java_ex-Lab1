@@ -1,35 +1,30 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-/*import  org.apache.poi.hssf.usermodel.HSSFSheet;
-import  org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import  org.apache.poi.hssf.usermodel.HSSFRow;
-import org.jsoup.nodes.Element;*/
+
 
 public class Parser4 {
 
     public static void main(String[] args) throws IOException {
-        // List<Article> articleList = new ArrayList<>();
-        PrintWriter out = new PrintWriter(new FileWriter("\\java\\MyFile1.xls"));
+
+        File f1=new File("\\java\\MyFile1.xls");
+        f1.createNewFile();
+        if (f1.exists()) {
+            System.out.println("Создан!!!!");
+            System.out.println("Полный путь1: "+ f1.getAbsolutePath());
+        }
+       PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream("\\java\\MyFile1.xls"),"Cp1251"));
         List<Table> tableList = new ArrayList<>();
 
         Document doc = Jsoup.connect("https://www.cbr.ru/currency_base/daily/").get();
-/*
-        Elements tableElements = doc.getElementsByAttributeValue("class","data");
 
-        tableElements.forEach(tableElement->{
-            Element thElement = tableElement.child(0);
-            String url = thElement.attr("td:class");
-            String title = tableElement.child(0).text();
-            articleList.add(new Article(url, title));
-        });
-        articleList.forEach(System.out::println);*/
+        Elements dateElements = doc.getElementsByClass("datepicker-filter");
+        String Date = dateElements.text();
+
         Elements tableElements = doc.getElementsByTag("tr");
         tableElements.forEach(tableElement -> {
             String NumCode = tableElement.child(0).text();
@@ -39,48 +34,13 @@ public class Parser4 {
             String Course = tableElement.child(4).text();
             tableList.add(new Table(NumCode, LetCode, SumToChange, Currency, Course));
         });
-        File f1=new File("\\java\\MyFile1.xls");
-        f1.createNewFile();
-        if (f1.exists()) {
-            System.out.println("Создан!!!!");
-            System.out.println("Полный путь1: "+ f1.getAbsolutePath());
-        }
+        System.out.println(Date);
         tableList.forEach(System.out::println);
+        out.println(Date);
         tableList.forEach(out::println);
-        out.flush();}
-   /* static class Article{
-        private String url;
-        private String name;
+        out.flush();
+    }
 
-        public Article(String url, String name) {
-            this.url = url;
-            this.name = name;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        @Override
-        public String toString() {
-            return "Article{" +
-                    "url='" + url + '\'' +
-                    ", name='" + name + '\'' +
-                    '}';
-        }
-    }*/
         static class Table {
             private String NumCode;
             private String LetCode;
@@ -138,14 +98,37 @@ public class Parser4 {
 
             @Override
             public String toString() {
-                return "Table{" +
-                        "NumCode='" + NumCode + '\'' +
-                        ", LetCode='" + LetCode + '\'' +
-                        ", SumToChange='" + SumToChange + '\'' +
-                        ", Currency='" + Currency + '\'' +
-                        ", Course='" + Course + '\'' +
+                return  NumCode + '\t' +
+                        LetCode + '\t' +
+                        SumToChange + '\t' +
+                        Currency + '\t' +
+                        Course + '\t'
+                        ;
+            }
+        }
+        static class Date{
+            private String Date;
+
+            public String getDate() {
+                return Date;
+            }
+
+            public void setDate(String date) {
+                Date = date;
+            }
+
+            public Date(String date) {
+                Date = date;
+            }
+
+            @Override
+            public String toString() {
+                return "Date{" +
+                        "Date='" + Date + '\'' +
                         '}';
             }
         }
-    }
+}
+
+
 
