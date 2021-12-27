@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class NAM {
+    public static String word = null;
+    protected static int step = 0;
+
+    public static void main(String[] args) {
+        Scanner id = new Scanner(System.in);
+        System.out.println("Введите слово");
+        word= id.nextLine();
+        int F1 = 0;
+        int F2 = 0;
+        int F3 = 0;
+        while(F1 >=0 || F2 >=0 || F3 >=0) {
+            while (F1 >= 0 || F2 >= 0) {
+                while (F1 >= 0) {
+                    F1 = FindTwoLetters(word, 'a', 'b');
+                    DeleteSymbol(word, F1);
+                }
+                F2 = FindOneLetter(word, 'b');
+                DeleteSymbol(word, F2);
+                F1 = FindTwoLetters(word, 'a', 'b');
+            }
+            F3 = FindOneLetter(word, 'a');
+            ChangeSymbol(word, F3, 'b');
+            F1 = FindTwoLetters(word, 'a', 'b');
+            F2 = FindOneLetter(word, 'b');
+        }
+
+
+        }
+
+
+        protected static int FindOneLetter(String inputWord, char targetChar) {
+        char[] TempArrayChar = inputWord.toCharArray();
+        for(int i=0; i< TempArrayChar.length; i++){
+        if (TempArrayChar[i] == targetChar) {
+            return i;
+        }
+        }
+        return -1;
+        }
+    protected static int FindTwoLetters(String inputWord, char FirstChar, char SecondChar) {
+        char[] TempArrayChar = inputWord.toCharArray();
+        if (TempArrayChar.length>1){
+        for(int i=1; i< TempArrayChar.length; i++){
+            if (TempArrayChar[i] == SecondChar && TempArrayChar[i-1] == FirstChar) {
+                return i;
+            }
+        }}
+        return -1;
+    }
+        protected static void DeleteSymbol(String inputWord, int number){
+            if (number<0){
+                return;
+            }
+            char[] TempArrayChar = inputWord.toCharArray();
+            char[] ArrayChar = new char[(TempArrayChar.length-1)];
+            for (int i = number; i < (TempArrayChar.length-1); i++) {
+                TempArrayChar[i] = TempArrayChar[i+1];}
+            TempArrayChar[(TempArrayChar.length-1)]=0;
+            for (int i = 0; i < (TempArrayChar.length-1); i++) {
+                ArrayChar[i] = TempArrayChar[i];}
+            word = new String(ArrayChar);
+            step++;
+            System.out.println("Шаг " + step + " : " +word);
+            return;
+        }
+
+    protected static void ChangeSymbol(String inputWord, int number, char replaceChar){
+        if (number<0){
+            return;
+        }
+        char[] TempArrayChar = inputWord.toCharArray();
+        TempArrayChar[number] = replaceChar;
+        word = new String(TempArrayChar);
+        step++;
+        System.out.println("Шаг " + step + " : " +word);
+        return;
+    }
+
+    }
+
