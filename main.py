@@ -1,4 +1,6 @@
 import telebot
+from sympy import symbols, solve, latex
+import numexpr as ne
 from telebot import types
 import func
 
@@ -172,19 +174,25 @@ def website(message):
     markup.add(types.InlineKeyboardButton("Посетить веб сайт", url="http://ya.ru"))
     bot.send_message(message.chat.id, 'перейдите на сайт', reply_markup=markup)
 
+@bot.message_handler(commands=['info'])
+def info(message):
+    bot.send_message(message.chat.id, """Данный бот производит слеудющие вычисления:
+    1. Для работы в режиме калькулятора отправьте выражение (например \"2+2*4\")
+    2. Для вычисления значений по формулам нажмите \"/start\" и следуйте инструкциям""", parse_mode='html')
+
 @bot.message_handler(commands=['help'])
 def help(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    website = types.KeyboardButton('/website')
     start = types.KeyboardButton('/start')
-    markup.add(website, start)
+    info = types.KeyboardButton('/info')
+    markup.add(start, info)
     bot.send_message(message.chat.id, 'список команд', reply_markup=markup)
 
 @bot.message_handler()
 def get_user_text(message):
     print(message.from_user.id, message.from_user.username, message.text)
     try:
-        answer=eval(message.text)
+        answer=ne.evaluate(message.text)
         bot.send_message(message.chat.id, f"Ответ: <b>{answer}</b>", parse_mode='html')
     except:
         if message.text == "привет":
